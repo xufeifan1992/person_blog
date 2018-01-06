@@ -1,4 +1,4 @@
-package com.waylau.spring.boot.thymeleaf.contrller;
+package com.feifan.spring.boot.thymeleaf.contrller;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 /**
  * Hello World 控制器测试类
  * @author <a href="https://waylau.com">Way Lau</a> 
- * @date 2017年1月26日
+ * @date 2017�?1�?26�?
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

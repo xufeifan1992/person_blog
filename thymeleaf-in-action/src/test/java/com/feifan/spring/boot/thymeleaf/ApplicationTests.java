@@ -1,4 +1,4 @@
-package com.waylau.spring.boot.thymeleaf;
+package com.feifan.spring.boot.thymeleaf;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
