@@ -3,6 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
 <title>Insert title here</title>
 </head>
 <body>
@@ -10,9 +11,13 @@
 	<h3 th:text="${userModel.title}">xufeifan</h3>
 	<div>
 		<p><strong>ID:</strong><span th:text="${userModel.user.id}"></span></p>
-		<p><strong>NAME:</strong><span th:text="${userModel.user.name}"></span></p>
-		<p><strong>EMAIL:</strong><span th:text="${userModel.user.email}"></span></p>
+		<p><strong>Name:</strong><span th:text="${userModel.user.name}"></span></p>
+		<p><strong>Email:</strong><span th:text="${userModel.user.email}"></span></p>
 	</div>
+	<br>
+	<!-- <input type="button" th:action="@{'/users/delete/' + ${userModel.user.id}}" th:value="删除"> -->
+	<a th:href="@{'/users/delete/' + ${userModel.user.id}}" >删除</a>
+	<a th:href="@{'/users/modify/' + ${userModel.user.id}}" >修改</a>
 	<div th:replace="~{fragments/footer :: footer }"></div>
 </body>
 </html>

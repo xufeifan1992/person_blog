@@ -89,5 +89,17 @@ public class UserController {
 		//重定向到list页面
 		return new ModelAndView("redirect:/users");
 	} 
+	/**
+	 * 获取修改用户的页面
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/modify/{id}")
+	public ModelAndView modify(@PathVariable("id") Long id , Model model){
+		User user = userRepository.getUserById(id);
+		model.addAttribute("user",user);
+		model.addAttribute("title","修改用户");
+		return new ModelAndView("users/form" , "userModel" , model);
+	} 
 	
 }

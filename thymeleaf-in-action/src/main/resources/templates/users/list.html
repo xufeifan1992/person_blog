@@ -3,6 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
 <title>thymeleaf in action</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
 	<tr th:each="user : ${userModel.userList}">
 		<td th:text="${user.id}"></td>
 		<td th:text="${user.email}"></td>
-		<td th:text="${user.name}"></td>
+		<td><a th:href="@{'/users/' + ${user.id}}" th:text="${user.name}"></a></td>
 	</tr>
 	</tbody>
 </table>
