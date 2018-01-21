@@ -7,6 +7,10 @@
 </head>
 <body>
 <div th:replace="~{fragments/header :: header }"></div>
+<h3 th:text="${userModel.title}">xufeifan</h3>
+<div>
+	<a href="user/form.html" th:href="@{/users/form}" >创建用户</a> 
+</div>
 <table border="1">
 	<thead>
 	<tr>
@@ -16,7 +20,14 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr></tr>
+	<tr th:if="${userModel.userList.size()} eq 0">
+		<td colspan="3">没有用户信息！</td>
+	</tr>
+	<tr th:each="user : ${userModel.userList}">
+		<td th:text="${user.id}"></td>
+		<td th:text="${user.email}"></td>
+		<td th:text="${user.name}"></td>
+	</tr>
 	</tbody>
 </table>
 <div th:replace="~{fragments/footer :: footer }"></div>

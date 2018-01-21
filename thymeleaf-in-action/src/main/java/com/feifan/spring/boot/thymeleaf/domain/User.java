@@ -1,7 +1,5 @@
 package com.feifan.spring.boot.thymeleaf.domain;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 /**
  * 用户实体
  * add by 2018-01-05

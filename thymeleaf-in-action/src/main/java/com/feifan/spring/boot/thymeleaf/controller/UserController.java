@@ -84,7 +84,7 @@ public class UserController {
 	 * @return
 	 */
 	@GetMapping("/delete/{id}")
-	public ModelAndView denlete(@PathVariable("id") Long id){
+	public ModelAndView delete(@PathVariable("id") Long id){
 		userRepository.deleteUser(id);
 		//重定向到list页面
 		return new ModelAndView("redirect:/users");
