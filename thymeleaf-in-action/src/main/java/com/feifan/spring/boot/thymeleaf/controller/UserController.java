@@ -42,7 +42,7 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping({"id"})
+	@GetMapping("{id}")
 	public ModelAndView view(@PathVariable("id") Long id , Model model){
 		
 		User user  = userRepository.getUserById(id);
