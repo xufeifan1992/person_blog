@@ -1,4 +1,5 @@
 package com.feifan.spring.boot.thymeleaf.domain;
+
 /**
  * 用户实体
  * add by 2018-01-05
