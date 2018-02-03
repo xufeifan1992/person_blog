@@ -1,4 +1,4 @@
-package com.feifan.spring.boot.blog.initializrstart.controller;
+package com.feifan.spring.boot.blog.controller;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

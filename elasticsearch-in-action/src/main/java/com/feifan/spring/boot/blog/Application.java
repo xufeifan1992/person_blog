@@ -1,4 +1,4 @@
-package com.feifan.spring.boot.blog.initializrstart;
+package com.feifan.spring.boot.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.feifan.spring.boot.blog.initializrstart.controller;
+package com.feifan.spring.boot.blog.controller;
 
 public class TestModel {
 	private String id;
