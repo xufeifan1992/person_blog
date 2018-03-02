@@ -3,11 +3,13 @@ package com.feifan.spring.boot.thymeleaf.blog.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.feifan.spring.boot.thymeleaf.blog.domain.User;
 import com.feifan.spring.boot.thymeleaf.blog.repository.UserRepository;
@@ -31,7 +33,7 @@ public class UserController {
 	 * @return
 	 */
 	@GetMapping
-	public ModelAndView list(Model model){
+	public ModelAndView list( Model model , @ModelAttribute("qqq") String qqq){
 		model.addAttribute("userList", userRepository.findAll());
 		model.addAttribute("title", "用户管理");
 		return new ModelAndView("users/list","userModel",model);
@@ -50,8 +52,7 @@ public class UserController {
 		model.addAttribute("title", "查看用户");
 		
 		return new ModelAndView("users/view","userModel",model);
-	} 
-	
+	}
 	/**
 	 * 获取创建表单页面
 	 * @param model
@@ -72,8 +73,9 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping
-	public ModelAndView saveOrUpdateUser(User user){
+	public ModelAndView saveOrUpdateUser(User user , RedirectAttributes attr){
 		userRepository.save(user);
+		attr.addFlashAttribute("qqq","123");
 		//重定向到list页面
 		return new ModelAndView("redirect:/users");
 	} 
@@ -101,5 +103,6 @@ public class UserController {
 		model.addAttribute("title","修改用户");
 		return new ModelAndView("users/form" , "userModel" , model);
 	} 
+	
 	
 }
